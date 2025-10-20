@@ -1,6 +1,6 @@
 # Dynamic Colour Changing Skydome: From Blender to a Horizon World
 
-This guide walks you through creating a low-poly skydome in **Blender**, optimising it, and exporting it as an `.fbx` file ready for Horizon Worlds. Connect the skydome to code to create a dynamic colour changing effect.
+This guide walks you through creating a low-poly skydome in **Blender**, optimising it and exporting it as an `.fbx` file ready for Horizon Worlds. Then connecting the skydome to code to create a dynamic colour changing effect.
 
 ## Demo
 
@@ -163,7 +163,7 @@ Here’s a quick preview of the result in action:
  ![Alt text](images/24.png)
 
 4. When done, in the **UV/Image Editor**, save the image:  
-   `Image → Save As → SkydomeMaterial_BR.png`.
+   `Image → Save As → Skydome_BR.png`.
 
 You now have a **PNG texture** with your flat color baked.
 
@@ -202,7 +202,7 @@ You now have a **PNG texture** with your flat color baked.
 ---
 Now you have:
 - `Skydome.fbx` 
-- `Skydome_BR.png
+- `Skydome_BR.png`
 
 You now have a **low-poly skydome FBX** ready to use in Horizon Worlds.
 
@@ -218,7 +218,7 @@ Go to the web portal for your creator account [Horizon World Creator assets page
 
 ![Alt text](images/29.png)
 
-1. Click → **Import.
+1. Click → **Import**.
 
 ![Alt text](images/28.png)
 
@@ -256,7 +256,7 @@ That's it. It's time to Code!
 
 Create a `Dynamic Sky Controller ` script that:
 
-- Tracks current sky (`0–3`) from and array of colours.
+- Tracks current sky (`0–3`) from an array of colours.
 - Shows only the correct colour.
 - Fires a timed event when the colour changes.
 
@@ -304,7 +304,8 @@ N.B. You can add as many colours as you want or different colours it's up to you
 
 ---
 
-Add: 
+Add:
+
 2. A number property to access the colours in the array.
 ```typescript
  private currentSkyNumber = 0;
@@ -312,7 +313,8 @@ Add:
 ---
 
 Add:
-3. Create a const colour variable from one of the colours in the array. 
+
+3. Create a **const colour variable** from one of the colours in the array. 
 
 ```typescript
 
@@ -322,7 +324,8 @@ start() {
 ```
 ---
 
-Add: 
+Add:
+
 4. Access the mesh of the entity (skydome) by casting it as **MeshEntity** and access the **tintColor** property of this entity. Set it to change with **selectedColour**.
 ```typescript
 
@@ -347,8 +350,9 @@ start() {
 ---
 Add: 
 
-The code needs to run more than once. Let's create a new function to do this.
-5. 
+5. The code needs to run more than once.
+Let's create a new function to do this.
+
 - Create a function called **applySkyTint**
 
 - Move the code from start into this function
@@ -428,9 +432,9 @@ start() {
 
 
 - Created and optimised a **low-poly skydome** in Blender.
-- **Baked flat color texture** into a PNG for compatibility. 
-- Export a ready-to-use **FBX with embedded textures** for Horizon Worlds.   
-- Created skydome entity with **colour variations** using the skydome's controller script.  
+- **Baked a flat colour texture** into a PNG for compatibility. 
+- Exported a ready-to-use **FBX with embedded textures** for Horizon Worlds.   
+- Created a skydome entity with **colour variations** using the skydome's controller script.  
 ---
 
 Helper Links to Learn More:
